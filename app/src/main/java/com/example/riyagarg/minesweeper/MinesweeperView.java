@@ -1,4 +1,4 @@
-package com.example.riyagarg.minesweeper;
+/*package com.example.riyagarg.minesweeper;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class MinesweeperView extends View {
 
-    //private MinesweeperView() {}
+    private MinesweeperView() {}
 
     public static int[][] generate( int bomb, final int width, final int height){
          Random Random = new Random();
@@ -77,12 +77,18 @@ public class MinesweeperView extends View {
           return false;
         }
 
-    public static refresh(){
-        invalidate();
+    //public static refresh(){
+        //invalidate();
+    //}
+
+    @Override
+    protected void onMeasure(int widthmeasure, int heightmeasure){
+        super.onMeasure(widthmeasure, heightmeasure);
+
     }
 
 
-}
+}*/
 
     /*
     private Paint paintBackground;

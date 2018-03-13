@@ -1,16 +1,17 @@
 package com.example.riyagarg.minesweeper.GridView.Grid;
 
 import android.content.Context;
+import android.view.View;
 
 
-import com.example.riyagarg.minesweeper.MinesweeperView;
+//import com.example.riyagarg.minesweeper.MinesweeperView;
 import com.example.riyagarg.minesweeper.Model.MinesweeperModel;
 
 /**
  * Created by riyagarg on 3/9/18.
  */
 
-public abstract class BaseCell {
+public abstract class BaseCell extends View {
 
     private int value;
     private boolean isBomb;
@@ -67,7 +68,7 @@ public abstract class BaseCell {
         this.isClicked = true;
         this.isRevealed = true;
 
-        MinesweeperView.refresh();
+        //MinesweeperView.refresh();
     }
 
     public boolean isFlagged() {
@@ -89,15 +90,15 @@ public abstract class BaseCell {
         x = position % MinesweeperModel.WIDTH;
         y = position / MinesweeperModel.HEIGHT;
 
-        MinesweeperView.refresh();
+        //MinesweeperView.refresh();
     }
 
-    public int getX() {
+    public int getPositionX() {
         return x;
     }
 
 
-    public int getY() {
+    public int getPositionY() {
         return y;
     }
 

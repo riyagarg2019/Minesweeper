@@ -16,7 +16,7 @@ import java.util.jar.Attributes;
  */
 
 public class Grid extends GridView{ //check name GridVIew
-    public Grid(Context context, Attributes attributes){
+    public Grid(Context context, android.util.AttributeSet attributes){
         super(context, attributes);
 
         setNumColumns(MinesweeperModel.WIDTH);
@@ -26,7 +26,7 @@ public class Grid extends GridView{ //check name GridVIew
 
         @Override
         public int getCount() {
-            return MinesweeperModel.getInstance().WIDTH * MinesweeperModel.getInstance().HEIGHT;
+            return 25;
         }
 
         @Override

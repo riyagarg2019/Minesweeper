@@ -11,7 +11,7 @@ public class PrintModel {
             for (int y = 0; y < height; y++) {
                 printedText += String.valueOf(grid[x][y]).replace("-1", "B") + "| ";
             }
-            System.out.print(printedText);
+            //System.out.print(printedText);
         }
     }
 }
