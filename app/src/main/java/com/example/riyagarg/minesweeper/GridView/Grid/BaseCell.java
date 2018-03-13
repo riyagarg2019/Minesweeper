@@ -11,7 +11,12 @@ import com.example.riyagarg.minesweeper.Model.MinesweeperModel;
  * Created by riyagarg on 3/9/18.
  */
 
-public abstract class BaseCell extends View {
+//public class BaseCell {
+
+
+
+
+/*public abstract class BaseCell extends View {
 
     private int value;
     private boolean isBomb;
@@ -104,4 +109,4 @@ public abstract class BaseCell extends View {
 
 
     //public abstract void onMeasure(int widthmeasure, int heightmeasure);
-}
+}*/

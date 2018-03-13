@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridLayout;
+import android.util.AttributeSet;
 import android.widget.GridView;
 
 import com.example.riyagarg.minesweeper.Model.MinesweeperModel;
@@ -16,13 +16,13 @@ import java.util.jar.Attributes;
  */
 
 public class Grid extends GridView{ //check name GridVIew
-    public Grid(Context context, android.util.AttributeSet attributes){
+    public Grid(Context context, AttributeSet attributes){
         super(context, attributes);
 
         setNumColumns(MinesweeperModel.WIDTH);
 
     }
-    private class GridAdapter extends BaseAdapter{
+    /*private class GridAdapter extends BaseAdapter{
 
         @Override
         public int getCount() {
@@ -43,5 +43,5 @@ public class Grid extends GridView{ //check name GridVIew
         public View getView(int position, View convertView, ViewGroup parent) {
             return MinesweeperModel.getInstance().getCell(position);
         }
-    }
+    }*/
 }

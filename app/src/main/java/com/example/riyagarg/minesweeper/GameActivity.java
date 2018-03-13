@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.riyagarg.minesweeper.Model.MinesweeperModel;
-import com.example.riyagarg.minesweeper.MinesweeperView;
+//import com.example.riyagarg.minesweeper.GridView.Grid.BaseCell;
 
 public class GameActivity extends AppCompatActivity {
 

@@ -8,13 +8,15 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.riyagarg.minesweeper.Model.MinesweeperModel;
+import com.example.riyagarg.minesweeper.MinesweeperView;
+
 import com.example.riyagarg.minesweeper.R;
 
 /**
  * Created by riyagarg on 3/9/18.
  */
 
-public class Cell extends BaseCell implements View.OnClickListener, View.OnLongClickListener{
+/*public class Cell implements View.OnClickListener, View.OnLongClickListener{
 
     private MinesweeperModel instance;
 
@@ -27,14 +29,14 @@ public class Cell extends BaseCell implements View.OnClickListener, View.OnLongC
         setOnLongClickListener(this);
     }
 
-    @Override
+    /*@Override
     protected void onMeasure(int widthmeasure, int heightmeasure){
         super.onMeasure(widthmeasure, heightmeasure);
 
-    }
-
+    }*/
+    /*
     @Override
-    protected void onClick(View v){
+    public void onClick(View v){
         MinesweeperModel.getInstance().click(getPositionX(), getPositionY());
     }
 
@@ -101,7 +103,104 @@ public class Cell extends BaseCell implements View.OnClickListener, View.OnLongC
         drawable.setBounds(0,0,getWidth(),getHeight());
         drawable.draw(canvas);
     }
+    */
+public class Cell {
+
+    private int value;
+    private boolean isBomb;
+    private boolean isRevealed;
+    private boolean isClicked;
+    private boolean isFlagged;
+
+    private int x,y;
+    private int position;
+
+    //public BaseCell(Context context){
+        //super(context);
+    //}
+    public Cell(Context context, int position) {
+        super(context);
+
+        setPosition(position);
+
+    }
 
 
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        isBomb = false;
+        isRevealed = false;
+        isClicked = false;
+        isFlagged = false;
+
+        if(value == -1){
+            isBomb = true;
+        }
+
+        this.value = value;
+    }
+
+    public boolean isBomb() {
+        return isBomb;
+    }
+
+    public void setBomb(boolean bomb) {
+        isBomb = bomb;
+    }
+
+    public boolean isRevealed() {
+        return isRevealed;
+    }
+
+    public void setRevealed(boolean revealed) {
+        isRevealed = revealed;
+    }
+
+    public boolean isClicked() {
+        return isClicked;
+    }
+
+    public void setClicked() {
+        this.isClicked = true;
+        this.isRevealed = true;
+
+        //MinesweeperView.refresh();
+    }
+
+    public boolean isFlagged() {
+        return isFlagged;
+    }
+
+    public void setFlagged(boolean flagged) {
+        isFlagged = flagged;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+
+        this.position = position;
+
+        x = position % MinesweeperModel.WIDTH;
+        y = position / MinesweeperModel.HEIGHT;
+
+        //MinesweeperView.refresh();
+    }
+
+    public int getPositionX() {
+        return x;
+    }
+
+
+    public int getPositionY() {
+        return y;
+    }
 }
+
+
 

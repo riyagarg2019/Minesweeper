@@ -6,10 +6,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.riyagarg.minesweeper.GridView.Grid.Cell;
-import com.example.riyagarg.minesweeper.GridView.Grid.Grid;
+import com.example.riyagarg.minesweeper.MinesweeperView;
+
 import com.example.riyagarg.minesweeper.Model.PrintModel;
 
-import com.example.riyagarg.minesweeper.GridView.Grid.BaseCell;
+//import com.example.riyagarg.minesweeper.GridView.Grid.BaseCell;
 
 import java.util.Random;
 
@@ -64,14 +65,14 @@ public class MinesweeperModel {
     }
 
 
-    public int[][] getCell(int x, int y) {
-        return Grid[x][y];
+    public Cell getCell(int x, int y) {
+        return MinesweeperGrid[x][y];
     } // check this method
 
-    public int[][] getCell(int position){
+    public Cell getCell(int position){
         int i = position % WIDTH;
         int j = position / WIDTH;
-        return Grid[i][j];
+        return MinesweeperGrid[i][j];
 
     }
 
@@ -89,7 +90,7 @@ public class MinesweeperModel {
                 }
             }
 
-            if( getCell(x,y).isBomb ){
+            if( getCell(x,y).isBomb() ){
                 onGameLost();
             }
         }
@@ -121,7 +122,7 @@ public class MinesweeperModel {
     public void flag( int x , int y ){
         boolean isFlagged = getCell(x,y).isFlagged();
         getCell(x,y).setFlagged(!isFlagged);
-        getCell(x,y).invalidate();
+        //getCell(x,y).invalidate();
     }
 
     private void onGameLost(){
@@ -130,7 +131,7 @@ public class MinesweeperModel {
 
         for ( int x = 0 ; x < WIDTH ; x++ ) {
             for (int y = 0; y < HEIGHT; y++) {
-                getCell(x,y).setRevealed();
+                getCell(x,y).setRevealed(true);
             }
         }
     }
@@ -209,7 +210,6 @@ public class MinesweeperModel {
         return false;
     }
 }
-
 
 
 
