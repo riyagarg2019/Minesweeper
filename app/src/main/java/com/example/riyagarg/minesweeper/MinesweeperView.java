@@ -22,6 +22,7 @@ import java.util.Random;
 public class MinesweeperView extends View {
 
     public MinesweeperView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
     }
 
     /*protected void onDraw(Canvas canvas) {…}
